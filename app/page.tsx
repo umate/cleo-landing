@@ -1,4 +1,4 @@
-import { ArrowPathIcon, ArrowTrendingUpIcon, CheckIcon, FaceSmileIcon } from "@heroicons/react/24/outline";
+import { ArrowPathIcon, ArrowTrendingUpIcon, CheckIcon, FaceSmileIcon, FunnelIcon } from "@heroicons/react/24/outline";
 
 import CTA from "./CTA";
 import Image from "next/image";
@@ -6,35 +6,51 @@ import WaitList from "./WaitList";
 
 const benefits = [
   {
-    name: "Increase conversion by 15%",
+    name: "97% of customers never buy anything",
+    icon: FunnelIcon
+  },
+  {
+    name: "Experts drive over 10% more sales",
     icon: ArrowTrendingUpIcon
   },
   {
-    name: "Increase customer satisfaction",
+    name: "Happier customers & less returns",
     icon: FaceSmileIcon
+  }
+];
+
+const expert_details = [
+  {
+    name: "We build an AI-powered sales training program for your brand",
+    icon: CheckIcon
   },
   {
-    name: "Reduce returns",
-    icon: ArrowPathIcon
+    name: "Our experts go through rigorous training to learn your brand and inventory",
+    icon: CheckIcon
+  },
+  {
+    name: "Experts are ready to help your customers",
+    icon: CheckIcon
   }
 ];
 
 export default function Home() {
   return (
-    <main className="min-h-screen items-center justify-between py-36 px-8">
-      <div className="space-y-48 ">
-        <div className="relative space-y-16 text-center max-w-3xl m-auto">
+    <main className="min-h-screen items-center justify-between py-16 md:py-32 px-4 md:px-8">
+      <div className="relative space-y-20 md:space-y-32">
+        {/* <img className="top-0 right-0 z-10 absolute mx-auto" src="/pattern.svg" alt="pattern" /> */}
+        <div className="max-w-3xl m-auto space-y-16">
           <Image
-            unoptimized
+            // unoptimized
             className="relative mx-auto"
             src="/cleo-logo-name.png"
             alt="Cleo Logo"
-            height={92}
-            width={331}
+            height={92 / 2}
+            width={331 / 2}
             priority
           />
-          <h1 className="font-serif text-slate-800 text-center text-5xl leading-tight">
-            Increase your outdoor gear sales
+          <h1 className="font-serif text-slate-800 text-center text-3xl md:text-5xl leading-tight">
+            We help you sell more
             <br />
             with <mark className="highlight">expert assistance</mark>
           </h1>
@@ -43,88 +59,92 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="benefits flex max-w-3xl m-auto">
-          <div className="flex-1 text-2xl">
-            <div className="space-y-8">
-              {benefits.map((benefit) => (
-                <li className="flex space-x-3 font-slate-800" key={benefit.name}>
-                  <benefit.icon className="h-8 w-8 text-pink-500/75" aria-hidden="true" />
-                  <span>{benefit.name}</span>
-                </li>
-              ))}
-            </div>
-          </div>
-          <div className="flex-1">
+        <div className="benefits grid md:grid-cols-2 items-center  max-w-4xl m-auto space-x-16">
+          <div className="order-last md:order-first mt-16">
             <Image
               unoptimized
               className="relative mx-auto"
               src="/app-mock.png"
               alt="Cleo Logo"
-              height={300}
-              width={200}
+              height={600}
+              width={350}
               priority
             />
           </div>
-        </div>
-
-        <div className="max-w-4xl m-auto">
-          <div className="bg-white px-16 py-12  rounded-2xl shadow-xl shadow-orange-600/5">
-            <h2 className="font-serif text-4xl">Transparent pricing</h2>
-            <div className="mt-6 space-y-2">
-              <p className="text-lg">We take 6% of your net sales powered by Cleo experts.</p>
-              <p className="text-md text-slate-500">
-                This means you only pay us when our experts convert a sale for you.
-              </p>
+          <div className="flex-1">
+            <div className="space-y-8">
+              <h2 className=" text-3xl font-serif">We connect your website customers with our experts</h2>
+              <div className="text-lg space-y-4 -ml-10">
+                {benefits.map((benefit) => (
+                  <div className="flex space-x-3 text-stone-600" key={benefit.name}>
+                    <benefit.icon className="-mt-0.5 h-8 w-8 text-pink-600/75" aria-hidden="true" />
+                    <span>{benefit.name}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="max-w-3xl m-auto">
-          <div className="flex space-x-20">
-            <div className="flex-0">
+        <div className="max-w-4xl m-auto px-4 md:px-0">
+          <div className="relative bg-white px-8 py-6 md:px-16 md:py-12  rounded-2xl shadow-lg shadow-stone-500/10">
+            {/* <div className="display-none md:block absolute h-full right-0 top-0 overflow-hidden">
               <Image
                 unoptimized
-                className="relative mx-auto"
-                src="/experts-mock.png"
-                alt="Cleo Logo"
-                height={300}
-                width={200}
-                priority
+                className="rounded-2xl h-full"
+                src="/transparency.png"
+                alt="Transparency"
+                height={220}
+                width={894}
               />
-            </div>
-            <div className="flex-1 text-xl">
-              <div className="space-y-8">
-                <div className="flex space-x-2 font-slate-800">
-                  <CheckIcon className="flex-0 inline h-10 w-10 text-pink-500/75" aria-hidden="true" />
-                  <div className="flex-1">
-                    Our experts are sales assistants and athletes who have received extensive training.
-                  </div>
-                </div>
-
-                <div className="flex space-x-2 font-slate-800">
-                  <CheckIcon className="flex-0 inline h-10 w-10 text-pink-500/75" aria-hidden="true" />
-                  <div className="flex-1">
-                    We ensure that our experts are equipped to provide the highest quality customer service to your
-                    customers
-                  </div>
-                </div>
+            </div> */}
+            <div className="relative z-10">
+              <h2 className="font-serif text-4xl">Transparent pricing</h2>
+              <div className="mt-6 space-y-2">
+                <p className="text-md md:text-xl">We take 9% of your net sales powered by Cleo experts.</p>
+                <p className="text-md text-stone-500">
+                  This means you only pay us when our experts convert a sale for you.
+                </p>
               </div>
             </div>
           </div>
         </div>
 
         <div className="max-w-4xl m-auto">
-          <div className="bg-white px-16 py-12  rounded-2xl shadow-xl shadow-orange-600/5 text-center">
-            <h2 className="font-serif text-4xl">One-click installation</h2>
-            <div className="mt-6 space-y-2">
-              <p className="text-lg">Install Cleo with one click with our Shopify App</p>
+          <div className="grid md:grid-cols-5 gap-y-24 items-center">
+            <div className="md:col-span-2">
+              <Image
+                unoptimized
+                className="relative mx-auto"
+                src="/happy-customer.png"
+                alt="Cleo Logo"
+                height={250}
+                width={250}
+                priority
+              />
+            </div>
+            <div className="md:col-span-3 px-4 space-y-6">
+              <h2 className=" text-2xl text-center md:text-left text-stone-800">
+                Our experts are sales assistants and athletes who have received{" "}
+                <mark className="highlight">extensive training</mark>
+              </h2>
+              <div className="px-8 md:px-0 text-lg space-y-4 -ml-10">
+                {expert_details.map((detail) => (
+                  <div className="flex space-x-3 text-stone-600" key={detail.name}>
+                    <detail.icon className="flex-0 h-8 w-8 text-pink-600/75" aria-hidden="true" />
+                    <div className="flex-1">{detail.name}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
 
         <div className="max-w-4xl m-auto">
-          <div className="text-center space-y-12">
-            <div className="mt-6 space-y-2">
+          <div className="bg-white px-8 py-6 md:px-16 md:py-12  rounded-2xl shadow-lg shadow-stone-500/10 border border-stone-200/25 text-center">
+            <h2 className="font-serif text-4xl">Simple installation</h2>
+            <div className="mt-6 space-y-6 md:space-y-12">
+              <p className="text-lg">Install Cleo with one click with our Shopify App</p>
               <CTA />
             </div>
           </div>

@@ -1,6 +1,7 @@
 import "./globals.css";
 
 import Head from "next/head";
+import Script from "next/script";
 
 export const metadata = {
   title: "Cleo",
@@ -17,6 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta property="og:description" content={metadata.description} key="description" />
         <link rel="icon" href="/favicon.png" />
       </Head>
+      <Script async src="https://tally.so/widgets/embed.js" />
       <body className="font-sans">{children}</body>
     </html>
   );
