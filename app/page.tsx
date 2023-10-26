@@ -98,14 +98,16 @@ export default function Home() {
                 width={894}
               />
             </div> */}
-            <div className="relative z-10">
-              <h2 className="font-serif text-4xl">Transparent pricing</h2>
-              <div className="mt-6 space-y-2">
-                <p className="text-md md:text-xl">We take 9% of your net sales powered by Cleo experts.</p>
-                <p className="text-md text-stone-500">
-                  This means you only pay us when our experts convert a sale for you.
-                </p>
-              </div>
+            <div className="relative z-10 space-y-6">
+              <h2 className="font-serif text-4xl">Transparent, commission-only pricing</h2>
+
+              <ul className="space-y-2 list-image-[url(check.png)]">
+                <li className="text-md md:text-xl">9% of net sales converted by Cleo experts.</li>
+                <li className="text-md md:text-xl">No fixed or setup fees.</li>
+              </ul>
+              <p className="text-md text-stone-500">
+                This means you only pay us when our experts convert a sale for you.
+              </p>
             </div>
           </div>
         </div>
