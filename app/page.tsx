@@ -4,6 +4,17 @@ import CTA from "./CTA";
 import Image from "next/image";
 import WaitList from "./WaitList";
 
+const heroDetails = [
+  {
+    name: "Weekly text with just deals",
+    icon: CheckIcon
+  },
+  {
+    name: "No email spam, no marketing fluff",
+    icon: CheckIcon
+  }
+];
+
 const benefits = [
   {
     name: "97% of customers never buy anything",
@@ -36,10 +47,10 @@ const expert_details = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen items-center justify-between py-16 md:py-32 px-4 md:px-8">
-      <div className="relative space-y-20 md:space-y-32">
+    <main className="min-h-screen items-center justify-between py-16 md:py-16 px-4 md:px-8">
+      <div className="relative space-y-20 md:space-y-24">
         {/* <img className="top-0 right-0 z-10 absolute mx-auto" src="/pattern.svg" alt="pattern" /> */}
-        <div className="max-w-3xl m-auto space-y-16">
+        {/* <div className="max-w-3xl m-auto space-y-16">
           <Image
             // unoptimized
             className="relative mx-auto"
@@ -57,14 +68,14 @@ export default function Home() {
           <div className="pt-4">
             <CTA />
           </div>
-        </div>
+        </div> */}
 
         <div className="benefits grid md:grid-cols-2 items-center  max-w-4xl m-auto space-x-16">
-          <div className="order-last md:order-first mt-16">
+          <div className="order-last md:order-first px-16 md:px-0 mt-16">
             <Image
               unoptimized
               className="relative mx-auto"
-              src="/app-mock.png"
+              src="/cleo-landing-screen.png"
               alt="Cleo Logo"
               height={600}
               width={350}
@@ -73,31 +84,32 @@ export default function Home() {
           </div>
           <div className="flex-1">
             <div className="space-y-8">
-              <h2 className=" text-3xl font-serif">We connect your website customers with our experts</h2>
-              <div className="text-lg space-y-4 -ml-10">
-                {benefits.map((benefit) => (
-                  <div className="flex space-x-3 text-stone-600" key={benefit.name}>
-                    <benefit.icon className="-mt-0.5 h-8 w-8 text-pink-600/75" aria-hidden="true" />
-                    <span>{benefit.name}</span>
+              <Image
+                // unoptimized
+                className="relative"
+                src="/cleo-logo-name.png"
+                alt="Cleo Logo"
+                height={92 / 2}
+                width={331 / 2}
+                priority
+              />
+              <h2 className=" text-4xl font-serif">Deal digest for the brands you love</h2>
+              <div className="px-8 md:px-0 text-lg space-y-4 -ml-10">
+                {heroDetails.map((detail) => (
+                  <div className="flex space-x-3 text-stone-600" key={detail.name}>
+                    <detail.icon className="flex-0 h-8 w-8 text-pink-600/75" aria-hidden="true" />
+                    <div className="flex-1">{detail.name}</div>
                   </div>
                 ))}
               </div>
+
+              <CTA />
             </div>
           </div>
         </div>
 
-        <div className="max-w-4xl m-auto px-4 md:px-0">
+        {/* <div className="max-w-4xl m-auto px-4 md:px-0">
           <div className="relative bg-white px-8 py-6 md:px-16 md:py-12  rounded-2xl shadow-lg shadow-stone-500/10">
-            {/* <div className="display-none md:block absolute h-full right-0 top-0 overflow-hidden">
-              <Image
-                unoptimized
-                className="rounded-2xl h-full"
-                src="/transparency.png"
-                alt="Transparency"
-                height={220}
-                width={894}
-              />
-            </div> */}
             <div className="relative z-10 space-y-6">
               <h2 className="font-serif text-4xl">Transparent, commission-only pricing</h2>
 
@@ -110,9 +122,9 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="max-w-4xl m-auto">
+        {/* <div className="max-w-4xl m-auto">
           <div className="grid md:grid-cols-5 gap-y-24 items-center">
             <div className="md:col-span-2">
               <Image
@@ -140,9 +152,9 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="max-w-4xl m-auto">
+        {/* <div className="max-w-4xl m-auto">
           <div className="bg-white px-8 py-6 md:px-16 md:py-12  rounded-2xl shadow-lg shadow-stone-500/10 border border-stone-200/25 text-center">
             <h2 className="font-serif text-4xl">Simple installation</h2>
             <div className="mt-6 space-y-6 md:space-y-12">
@@ -150,7 +162,7 @@ export default function Home() {
               <CTA />
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </main>
   );

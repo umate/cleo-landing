@@ -5,7 +5,7 @@ import Script from "next/script";
 
 export const metadata = {
   title: "Cleo",
-  description: "We help brands sell more online with expert assistance."
+  description: "Weekly deals from your favorite brands."
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

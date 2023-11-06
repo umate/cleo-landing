@@ -1,9 +1,9 @@
 const CTA = () => (
-  <div className="m-auto max-w-xs text-center">
+  <div className="m-0 max-w-xs text-center">
     <button
       data-tally-open="mOX9j7"
       data-tally-layout="modal"
-      data-tally-width="500"
+      data-tally-width="520"
       data-tally-emoji-text="👋"
       data-tally-emoji-animation="wave"
       data-tally-auto-close="2000"
